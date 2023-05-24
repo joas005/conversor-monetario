@@ -32,9 +32,9 @@ def convertCoins(coin, mode):
     coinName, valueCoin, whenChecked = requestingAPI(coin)
     while True:
         if mode == 'toBRL':
-            convertValue = input(f'\nInsira aqui o valor em \033[35m{coinName}\033[0m que você deseja converter para reais: ')
+            convertValue = input(f'\nInsira aqui o valor \033[31m(sem . separando nos números)\033[0m em \033[35m{coinName}\033[0m que você deseja converter para reais: ').strip()
         else:
-            convertValue = input(f'\nInsira aqui o valor em \033[35mREAIS\033[0m que você deseja converter para {coinName}: ')
+            convertValue = input(f'\nInsira aqui o valor \033[31m(sem . separando nos números)\033[0m em \033[35mREAIS\033[0m que você deseja converter para {coinName}: ').strip()
         
         try:
             if convertValue.find(',') != -1:
